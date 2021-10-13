@@ -1,4 +1,8 @@
-import firebase from "firebase";
+import firebase from "firebase/compat/app";
+import "firebase/firestore";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+import "firebase/compat/storage"; 
 
 const firebaseConfig = {
     apiKey: "AIzaSyD1XWHTFbzHb0Xlprbr7nRBGDVSgssjPEA",
@@ -6,11 +10,11 @@ const firebaseConfig = {
     projectId: "llinkedin-clone-343e9",
     storageBucket: "llinkedin-clone-343e9.appspot.com",
     messagingSenderId: "902562956161",
-    appId: "1:902562956161:web:265da74c594b2f6b881e80"
+    appId: "1:902562956161:web:265da74c594b2f6b881e80",
   };
 
   const firebaseApp = firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
+  const db = firebaseApp.firestore();
   const auth = firebase.auth();
   const provider = new firebase.auth.GoogleAuthProvider();
   const storage = firebase.storage();
